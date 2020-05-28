@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <!-- header -->
+  <div class="header">
+    <div class="container">
+      <a class="logo-wrap" href="index.html">
+        <img class="logo" src="../img/logo.png" alt="">
+      </a>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">首页</a></li>
+        <li class="nav-item"><a href="articles.html">日志</a></li>
+        <li class="nav-item active"><a href="demos.html">演示</a></li>
+        <li class="nav-item"><a href="link.html">关于</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <!-- 日志列表 -->
+      <ul class="articles-list">
+        <li class="articles-item">
+          <a class="articles-item-wrap" href="">
+            <div class="articles-category">Canvas</div>
+            <h2 class="articles-title">说说 Node 和 ES6 模块化那些不为人知的事儿</h2>
+            <div class="articles-attr-wrap">
+              <span class="articles-attr">发布于：2020.05.28</span>
+              <span class="articles-attr">访问：123</span>
+            </div>
+          </a>
+        </li>
+        <li class="articles-item">
+          <a class="articles-item-wrap" href="">
+            <div class="articles-category">OpenGL</div>
+            <h2 class="articles-title">演示标题</h2>
+            <div class="articles-attr-wrap">
+              <span class="articles-attr">发布于：2020.05.28</span>
+              <span class="articles-attr">访问：23</span>
+            </div>
+          </a>
+        </li>
+        <li class="articles-item">
+          <a class="articles-item-wrap" href="">
+            <div class="articles-category">OpenGL</div>
+            <h2 class="articles-title">演示标题</h2>
+            <div class="articles-attr-wrap">
+              <span class="articles-attr">发布于：2020.05.28</span>
+              <span class="articles-attr">访问：23</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="siderbar">
+
+      <!-- 标签 -->
+      <div class="panel">
+        <div class="panel-title">标签</div>
+        <div class="panel-content">
+          <ul class="panel-list">
+            <li class="panel-item"><a href="">Canvas</a></li>
+            <li class="panel-item"><a href="">JavaScript</a></li>
+            <li class="panel-item"><a href="">OpenGL</a></li>
+            <li class="panel-item"><a href="">布局</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

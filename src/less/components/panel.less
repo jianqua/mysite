@@ -1,0 +1,67 @@
+.card {
+  margin-bottom: @spacing-md;
+  border: 1px solid @color-border;
+  border-radius: 2px;
+  &-header {
+    .clearfix;
+    padding: @spacing-md;
+    border-bottom: 1px solid @color-divider;
+  }
+  &-title {
+    color: @color-title;
+    // font-weight: bold;
+  }
+  &-more {
+    float: right;
+    color: @color-text-secondary;
+  }
+  &-body {
+    line-height: 18px;
+  }
+  &-list {
+    color: @color-text;
+  }
+  &-item + &-item {
+    border-top: 1px dashed @color-divider;
+  }
+  &-item {
+    a {
+      display: block;
+      padding: 13px @spacing-md;
+      // &:hover {
+      //   background: @color-background-content;
+      // }
+    }
+  }
+}
+
+.panel {
+  margin-bottom: @spacing-md;
+  border: 1px solid @color-border;
+  border-radius: 2px;
+  &-title {
+    padding: @spacing-md;
+    color: @color-title;
+    // font-weight: bold;
+    border-bottom: 1px solid @color-border;
+  }
+  &-content {
+    padding: @spacing-md;
+    line-height: 18px;
+  }
+  &-list {
+    color: @color-text;
+    // &-link:hover {
+    //   border-bottom: 1px solid @color-primary;
+    // }
+  }
+  &-item + &-item {
+    margin-top: @spacing-sm;
+  }
+  &-item {
+    a:hover {
+      border-bottom: 1px solid @color-primary;
+      // text-decoration: underline;
+    }
+  }
+}
