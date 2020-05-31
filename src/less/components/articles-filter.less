@@ -1,0 +1,24 @@
+.articles-filter {
+  margin-bottom: @spacing-md;
+  padding: @spacing-sm @spacing-md @spacing-md;
+  background: @white;
+  border-radius: 2px;
+}
+.articles-categories {
+  .clearfix;
+  & + & {
+    margin-top: @spacing-sm;
+  }
+  a {
+    float: left;
+    margin-right: @spacing-sm;
+    margin-top: @spacing-sm;
+    padding: @spacing-sm @spacing-md;
+    // background: #ececec;
+    border: 1px solid @color-border;
+    border-radius: 2px;
+    &.active {
+      color: @color-primary;
+    }
+  }
+}
