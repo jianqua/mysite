@@ -1,14 +1,15 @@
 .card {
-  margin-bottom: @spacing-md;
+  margin-bottom: @spacing-md*2;
   // border: 1px solid @color-border;
   border-radius: 2px;
   background: @white;
   &-header {
     .clearfix;
-    padding: @spacing-md;
-    border-bottom: 1px solid @color-divider;
+    padding: 0 @spacing-md @spacing-md;
+    // border-bottom: 1px solid @color-divider;
   }
   &-title {
+    font-size: 28px;
     color: @color-title;
     font-weight: bold;
   }
@@ -17,21 +18,23 @@
     color: @color-text-secondary;
   }
   &-body {
-    line-height: 18px;
+    line-height: 24px;
   }
   &-list {
     color: @color-text;
   }
-  &-item + &-item {
-    border-top: 1px dashed @color-divider;
-  }
+  // &-item + &-item {
+  //   border-top: 1px solid @color-divider;
+  // }
   &-item {
     a {
       display: block;
       padding: 13px @spacing-md;
-      // &:hover {
-      //   background: @color-background-content;
-      // }
+      font-size: @font-size-md;
+      &:hover {
+        // color: @color-title;
+        background: @color-background-content;
+      }
     }
   }
 }

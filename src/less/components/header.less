@@ -1,5 +1,6 @@
 .header {
-  margin-bottom: @spacing-md;
+  // margin-bottom: @spacing-md;
+  padding: 32px 0;
   background: @white;
   // border-bottom: 1px solid @color-border;
 
@@ -18,8 +19,8 @@
     //   background: @color-background-content;
     // }
     padding: 0 @spacing-md;
-    height: 60px;
-    line-height: 60px;
+    height: 62px;
+    line-height: 62px;
     font-size: 18px;
     font-family: @font-family-code;
   }
@@ -28,21 +29,25 @@
 .nav {
   &-list {
     .clearfix;
-    display: block;
     float: right;
+    padding: 12px 0;
   }
   &-item {
     float: left;
     margin-left: @spacing-md;
-    &.active {
-      color: @color-primary;
-    }
+    // &.active {
+    //   color: @color-primary;
+    //   background: @color-background-content;
+    // }
     a {
       display: inline-block;
-      padding: @spacing-lg @spacing-md;
+      padding: 12px 18px;
+      font-weight: bold;
+      border-radius: 2px;
+      &.active,
       &:hover {
-        color: @color-link;
-        // background: @color-background-content;
+        color: @white;
+        background: @color-primary;
       }
     }
   }
