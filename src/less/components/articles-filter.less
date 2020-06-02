@@ -13,12 +13,15 @@
     float: left;
     margin-right: @spacing-sm;
     margin-top: @spacing-sm;
-    padding: @spacing-sm @spacing-md;
+    padding: @spacing-xs @spacing-sm;
     // background: #ececec;
-    border: 1px solid @color-border;
+    color: @color-text-secondary;
+    border: 1px dotted @color-border;
     border-radius: 2px;
-    &.active {
+    &.active,
+    &:hover {
       color: @color-primary;
+      border: 1px solid @color-border;
     }
   }
 }

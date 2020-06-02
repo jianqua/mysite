@@ -2,8 +2,8 @@
   &-wrap {
     margin-bottom: @spacing-md;
     // border: 1px solid @color-border;
-    border-radius: 2px;
-    background: @white;   
+    // border-radius: 2px;
+    // background: @white;
   }
   &-attr-list {
     .clearfix;
@@ -29,10 +29,17 @@
   //   border-bottom: 1px solid @color-divider;
   // }
   &-title {
-    padding: @spacing-md*2 @spacing-md @spacing-md;
+    padding: @spacing-md*2 @spacing-md @spacing-md*2;
     color: @color-title;
-    font-size: 20px;
-    line-height: 1.4;
+    font-size: 32px;
+    line-height: 1.5;
+    // text-align: center;
+  }
+  &-time {
+    padding: 0 @spacing-md;
+    margin-bottom: @spacing-md*2;
+    color: @color-text-secondary;
+    // text-align: center;
   }
   // &-attr-list {
   //   padding: @spacing-md @spacing-md @spacing-sm;
@@ -54,14 +61,14 @@
 }
 
 .article {
-  & > :last-child {
-    margin-bottom: 0;
-  }
   padding: @spacing-md;
   font-size: 12px;
   line-height: 20px;
   text-align: justify;
   letter-spacing: 1px;
+  & > :last-child {
+    margin-bottom: 0;
+  }
   > * {
     margin-bottom: @spacing-md;
   }
@@ -71,15 +78,14 @@
   h4,
   h5,
   h6 {
-    font-size: @font-size-sm;
     color: @color-title;
-    font-weight: bold;
+    line-height: 1.5;
   }
-  h1 {
-    padding: 20px 0 12px;
-    color: @color-title;
-    font-size: 20px;
-    line-height: 1.4;
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 16px;
   }
   :not(pre) code {
     // margin: 0 4px;
@@ -116,9 +122,10 @@
   }
   a {
     color: @color-primary;
-    &:hover {
-      border-bottom: 1px solid @color-primary;
-    }
+    border-bottom: 1px solid @color-primary;
+    // &:hover {
+    //   border-bottom: 1px solid @color-primary;
+    // }
   }
   em {
     font-style: italic;
