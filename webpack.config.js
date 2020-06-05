@@ -59,6 +59,11 @@ module.exports = {
       template: 'src/template/articles.html'
     }),
     new HtmlWebpackPlugin({
+      title: '日志详情',
+      filename: 'article.html',
+      template: 'src/template/article.html'
+    }),
+    new HtmlWebpackPlugin({
       title: '演示',
       filename: 'demos.html',
       template: 'src/template/demos.html'

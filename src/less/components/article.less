@@ -5,15 +5,44 @@
     // border-radius: 2px;
     // background: @white;
   }
-  &-attr-list {
+  &-tags {
     .clearfix;
-    padding: @spacing-md;
-    // border-bottom: 1px solid @color-divider;
+    padding: @spacing-sm @spacing-md @spacing-md;
   }
-  &-attr-item {
+  &-tag {
     float: left;
-    margin-right: @spacing-md;
+    margin-right: @spacing-sm;
+    margin-top: @spacing-sm;
+    padding: @spacing-xs @spacing-sm;
+    color: @color-text-secondary;
+    border: 1px solid @color-border;
+    border-radius: 2px;
+    &:hover {
+      color: @color-primary;
+      border: 1px solid @color-border;
+    }
   }
+  &-info-list {
+    padding: @spacing-md;
+    line-height: 18px;
+    background: @color-background-content;
+    border-left: 2px solid @color-divider;
+  }
+  &-info-item {
+    & + & {
+      margin-top: @spacing-xs;
+    }
+    a:hover {
+      border-bottom: 1px solid @color-primary;
+    }
+  }
+  &-info-title {
+    color: @color-title;
+  }
+  // &-attr-item {
+  //   float: left;
+  //   margin-right: @spacing-md;
+  // }
 
   // &-attr,
   // &-attr-wrap {
@@ -35,12 +64,12 @@
     line-height: 1.5;
     // text-align: center;
   }
-  &-time {
-    padding: 0 @spacing-md;
-    margin-bottom: @spacing-md*2;
-    color: @color-text-secondary;
-    // text-align: center;
-  }
+  // &-time {
+  //   padding: 0 @spacing-md;
+  //   margin-bottom: @spacing-md*2;
+  //   color: @color-text-secondary;
+  //   // text-align: center;
+  // }
   // &-attr-list {
   //   padding: @spacing-md @spacing-md @spacing-sm;
   //   border-top: 1px solid @color-divider;
@@ -102,7 +131,6 @@
     line-height: 1.4;
     // font-size: @font-size-content;
     font-family: @font-family-code;
-    letter-spacing: 0;
     border-radius: 2px;
     background: @color-background-content;
     overflow: auto;
@@ -121,11 +149,10 @@
     max-width: 100%;
   }
   a {
-    color: @color-primary;
-    border-bottom: 1px solid @color-primary;
-    // &:hover {
-    //   border-bottom: 1px solid @color-primary;
-    // }
+    border-bottom: 1px solid @color-text;
+    &:hover {
+      border-bottom: 1px solid @color-primary;
+    }
   }
   em {
     font-style: italic;
