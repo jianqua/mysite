@@ -1,9 +1,12 @@
 .articles {
   &-list {
-    margin-bottom: @spacing-md;
+    // margin-bottom: @spacing-md;
     padding: @spacing-md;
     line-height: 18px;
     // border: 1px solid @color-border;
+    & + & {
+      border-top: 1px solid @color-primary;
+    }
   }
   &-item {
     // .clearfix;
@@ -28,6 +31,21 @@
     }
     h2 {
       display: inline;
+    }
+  }
+  &-more-wrap {
+    margin-bottom: @spacing-md;
+    padding: @spacing-md;
+  }
+  &-more {
+    padding: @spacing-sm;
+    cursor: pointer;
+    color: @color-text-secondary;
+    border-radius: 2px;
+    border: 1px solid @color-border;
+    &:hover {
+      color: @color-primary;
+      border-color: @color-primary;
     }
   }
 }
