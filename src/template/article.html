@@ -39,77 +39,145 @@
       </div>
 
       <div class="article">
-        <p>今天放学后回家发现钥匙忘到单位了。我们爷俩只好等妈妈下班回家。估计儿子妈妈要到小区门口了，我们爷俩准备去门口接她，顺便买些吃的。</p>
-        <p>一路上，儿子跟我讲着学校足球课上的趣事。他说足球课上，我们这边的足球队员太厉害了，我们的守门员闲的没事可做了，坐着不知干啥好了，就和我聊天。足球一直在那边球门附近踢。那边的守门员被忙得手忙脚乱，一直闲不下来，有时一着急，还整乌龙球，用头顶到自己球门里了。乐死我了。</p>
-        <p>我问他:你没有上场踢吗？</p>
-        <p>他说:上场踢了。</p>
-        <p>我接着跟儿子说:对于你们的守门员来讲，他一点儿也没受到锻炼，而对方的守门员才真正的受到了锻炼。你们的守门员在那闲着，而对于守门来说，他却没得到任何机会去锻炼，比如说球可能从各种方向来，他怎么去扑救，如果真的陷入险境，他可能一下子不知所措了，而对方的守门员却经验越来越丰富了。</p>
-        <p>八九年 生于贵州安顺 现居四川成都 中国西南部活跃。</p>
-        <p>一四年 进入前端开发 遵循极简主义 热爱新特性 喜欢有趣的项目。部分开源在<a href="">GitHub</a>。</p>
-        <p>一九年 接触拍摄 追求氛围感 喜欢日系拍摄。偶尔分享在<a href="">微博</a>。</p>
-        <p>代码、摄影、撸啊撸、NBA、参考消息 我的全部。</p>
-        <p>留言给我 也可以通过<a href="">QQ</a>、<a href="mailto:zhangjh03@126.com">邮箱</a>联系我。也许？</p>
-        <p>开始吧！</p>
-        <p>7 岁左右的一天傍晚，<i class="icon icon-like"></i>我听到有人在院子门外大吼，父亲端着一只烛台出去观望。他推开了院子的门，走了出去，我在院子里面，立起耳朵努力地听外面在说什么。大吼的是个邻居，以前犯过事，蹲过监狱。他来我们家门外闹事，原因我已经记不清楚了，好像跟母亲有些关联。因为有一次他冲到我们家，拿着柴火打了母亲，那天父亲不在家。从那以后有很长一段时间我都想着自己长大以后要复仇。</p>
-        <p><img src="../img/5.jpg" alt="" title="简书"></p>
-        <p><img src="../img/1.jpg" alt="" title="简书"></p>
-        <p><img src="../img/2.jpg" alt="" title="简书"></p>
-        <p>创建集合(数据表)后要再插入一个文档(记录)，集合才会创建，数据库列表中才会显示。</p>
-        <p>这次他又来闹事，他跟父亲在外面说的具体是什么我都记不清了，只记得父亲拿着烛台的样子，还有两句话。那人说：“我今天要杀人了啊”。父亲回了一些话，最后说了一句：“为了孩子...”。这事儿就这么过去了。不过 “为了孩子” 这句话对我影响很大，让我觉得自己很重要，感觉很安全。父亲年轻时也经常好勇斗狠，用他的话讲，就是当时没有太多娱乐活动，打架是为数不多的乐趣之一。他头顶还有个挺深的坑，是打架时被人用水壶敲的。认识母亲以后，他才开始慢慢变得温顺。</p>
-        <p>这种家庭的观念从小就被灌输进来。虽然家里经历了长时间的颠沛流离，不过无论是在帐篷里过年，漏雨的屋子，还是冬天会结冰的天花板，这也都是父母当时尽力提供的一个相对舒适的环境，这让我从未感到恐惧。</p>
-        <h2>数据库</h2>
-        <p>创建集合(数据表)后要再插入一个文档(记录)，集合才会创建，数据库列表中才会显示。</p>
-        <pre><code>new Vue({
-data: {
-  a: 1
-},
-created: function () {
-  console.log('a is: ' + this.a)
-}
-})</code></pre>
-        <p>查:</p>
-        <pre><code>show dbs</code></pre>
-        <h3>查看所属数据库 / 集合(表):</h3>
-        <pre><code>db</code></pre>
-        <p>创建,如果数据库不存在，则创建数据库，否则切换到指定数据库:</p>
-        <pre><code>use DB_NAME</code></pre>
-        <p>删除当前数据库，默认test:</p>
-        <pre><code>db.dropDatabase()</code></pre>
-        <h3>集合(表)</h3>
-        <p>查:</p>
-        <pre><code>show tables</code></pre>
-        <p>或：</p>
-        <pre><code>show collections</code></pre>
-        <p>创建:</p>
-        <pre><code>db.createCollection(name, options)</code></pre>
-        <p>删除:</p>
-        <pre><code>db.collection.drop()</code></pre>
-        <h3>文档(记录)</h3>
-        <p><strong>增</strong></p>
-        <p>如果不指定_id字段<code>save()</code>方法类似于<code>insert()</code>方法。如果指定_id字段，则会更新该_id的数据。</p>
-        <p>向数据库中插入记录，自动创建集合，集合名为数据库名:</p>
-        <pre><code>db.DB_NAME.insert(BSON)</code></pre>
-        <p>向集合中，如果该集合不在该数据库中， MongoDB会自动创建该集合并插入文档:</p>
-        <pre><code>db.collection.insert(BSON)</code></pre>
-        <p>可以吧文档数据存储在变量中，然后插入该变量。</p>
-        <p><strong>查</strong></p>
-        <pre><code>db.collection.find()</code></pre>
-        <pre><code>db.collection.find().pretty()</code></pre>
-        <p><strong>改</strong></p>
-        <pre><code>db.collection.update(quert, update, options)</code></pre>
-        <pre><code>db.collection.save(BSON, options)</code></pre>
-        <p><strong>删</strong></p>
-        <pre><code>db.collection.remove(query, options)</code></pre>
-        <p>全部:</p>
-        <pre><code>db.collection.remove({})</code></pre>
-        <pre><code>db.collection.deleteMany({})
+<h2 id="linux-">LINUX安装</h2>
+<p>下载 解压 .tar.tz 文件</p>
+<p>解压命令：</p>
+<pre><code>tar zxvf ..<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+</code></pre><p>得到目录结构：</p>
+<pre><code>├── <span class="hljs-keyword">bin
+</span>│   ├── <span class="hljs-keyword">bsondump
+</span>│   ├── mongo
+│   ├── mongod
+│   ├── mongodump
+│   ├── mongoexport
+│   ├── mongofiles
+│   ├── mongoimport
+│   ├── mongooplog
+│   ├── mongoperf
+│   ├── mongoreplay
+│   ├── mongorestore
+│   ├── mongos
+│   ├── mongostat
+│   └── mongotop
+├── GNU-AGPL-<span class="hljs-number">3</span>.<span class="hljs-number">0</span>
+├── MPL-<span class="hljs-number">2</span>
+├── README
+└── THIRD-PARTY-NOTICES
+</code></pre><h2 id="mac-4-0-3">MAC安装 4.0.3</h2>
+<p>下载安装包 ..tgz</p>
+<p>解压</p>
+<p>重命名为mongodb，移动到 <code>/usr/local</code></p>
+<p><code>bin/</code>目录加入环境变量 编辑<code>~/.zhsrc</code> ? <code>~/.bash_profile</code></p>
+<pre><code>export PATH=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/mongodb/</span>bin:<span class="hljs-variable">${PATH}</span>
+</code></pre><p>使配置问价生效</p>
+<pre><code><span class="hljs-built_in">source</span> ~/.bash_profile
+</code></pre><p>根目录下创建数据目录 最高权限</p>
+<pre><code><span class="hljs-title">sudo</span> mkdir -p /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
+</code></pre><p>打开mongod提示/data/db只有可读权限 增加权限</p>
+<pre><code><span class="hljs-title">sudo</span> chown id -u /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
+</code></pre><p>填写用户名 给予权限</p>
+<pre><code><span class="hljs-title">sudo</span> chown <span class="hljs-type">ZHANGJIANHUA</span> /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
+</code></pre><h2 id="-">配置</h2>
+<p>无论WIN，MAC都要自己建立目录，和配置信息。</p>
+<p>新增目录结构：</p>
+<pre><code>├── <span class="hljs-keyword">conf</span>
+│   └── mongod.<span class="hljs-keyword">conf</span>
+├── data
+├── <span class="hljs-built_in">log</span>
+│   └── mongod.<span class="hljs-built_in">log</span>
+</code></pre><p>mongod.conf配置信息：</p>
+<pre><code><span class="hljs-attr">port</span> = <span class="hljs-number">12345</span>
+<span class="hljs-attr">dbpath</span> = data
+<span class="hljs-attr">logpath</span> = log/mongod.log
+<span class="hljs-attr">fork</span> = <span class="hljs-literal">true</span> // 以后台程序运行
+</code></pre><h2 id="-">启动</h2>
+<p>找到安装目录 bin的上一级</p>
+<p>MAC: <code>/usr/local/mongodb/</code></p>
+<pre><code class="lang-/bin/mongod```">
+```./bin/mongo`
+</code></pre>
+<p>以配置文件启动</p>
+<pre><code>./bin/mongod -f <span class="hljs-keyword">conf</span>/mongod.<span class="hljs-keyword">conf</span>
+</code></pre><h2 id="-mongodb-">连接mongodb服务器 / 数据库</h2>
+<p>查看连接具体参数</p>
+<pre><code>./bin/mongo <span class="hljs-comment">--help</span>
+</code></pre><p>链接数据库：</p>
+<pre><code>./bin/mongo <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">12345</span>/foo
+</code></pre><h2 id="-mongodb-">关闭mongodb服务器</h2>
+<p>在(<code>./mongo</code>)已经开启时，关闭：</p>
+<pre><code><span class="hljs-keyword">use</span> <span class="hljs-keyword">admin</span>
 
-db.conllection.deleteMany({'status': '0'})
+db.shutdownServer()
+</code></pre><h2 id="-">基本操作</h2>
+<p>查看数据库列表</p>
+<pre><code><span class="hljs-attribute">show dbs</span>
+</code></pre><p>选择数据库 / 如果没有则创建此数据库并进入</p>
+<pre><code><span class="hljs-meta"><span class="hljs-meta-keyword">use</span> &lt;db_name&gt;</span>
+</code></pre><p>选择数据库后 删除数据库 删除后进行检查 <code>show dbs</code></p>
+<pre><code><span class="hljs-selector-tag">db</span><span class="hljs-selector-class">.dropDatabase</span>()
+</code></pre><p>集合(表)。 <strong>插入</strong> 文档(记录) / 若没有 默认创建此集合。检查 show dbs</p>
+<pre><code>db.&lt;table_name&gt;.insert(&lt;json&gt;)
 
-db.conllection.deleteOne({'status': '0'})</code></pre>
-        <p>7 岁左右的一天傍晚，我听到有人在院子门外大吼，父亲端着一只烛台出去观望。7 岁左右的一天傍晚，我听到有人在院子门外大吼，父亲端着一只烛台出去观望。</p>
-        <p>疾恶如仇、</p>
-        <p>以上。</p>
+<span class="hljs-comment">// 用js语法批量插入多条数据</span>
+<span class="hljs-function"><span class="hljs-title">for</span><span class="hljs-params">(i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">100</span>; i++)</span><span class="hljs-title">db</span></span>.&lt;table_name&gt;.insert({x: i})
+</code></pre><p>查看集合(表)列表</p>
+<pre><code><span class="hljs-attribute">show collections</span>
+</code></pre><p><strong>查询</strong> 文档(记录)</p>
+<p>可以不带参数 默认显示所有 每条文档生成全局唯一_id 此_id也可以自定义 但不可以重复</p>
+<pre><code>db.<span class="hljs-symbol">&lt;table_name&gt;</span>.<span class="hljs-keyword">find</span>()
+</code></pre><p>带参</p>
+<pre><code>db.<span class="hljs-symbol">&lt;table_name&gt;</span>.<span class="hljs-keyword">find</span>(<span class="hljs-symbol">&lt;json&gt;</span>)
+</code></pre><p>文档多条时 计数(length)查询</p>
+<pre><code>db.&lt;table_name&gt;.<span class="hljs-keyword">find</span>().<span class="hljs-keyword">count</span>() <span class="hljs-comment">//99</span>
+</code></pre><p>查询[3 - 50]文档 查询第3条开始 返回2条文档 同时以x排序</p>
+<pre><code><span class="hljs-selector-tag">db</span>.&lt;<span class="hljs-selector-tag">table_name</span>&gt;<span class="hljs-selector-class">.find</span>()<span class="hljs-selector-class">.skip</span>(3)<span class="hljs-selector-class">.limit</span>(2)<span class="hljs-selector-class">.sort</span>({<span class="hljs-attribute">x</span>: <span class="hljs-number">1</span>})
+</code></pre><h2 id="-">关于</h2>
+<p>Linux卸载命令：</p>
+<pre><code>sudo apt-<span class="hljs-keyword">get</span> autoremove <span class="hljs-comment">--purge soft_wera_name</span>
+</code></pre><p>Linux解压命令：</p>
+<pre><code>tar zxvf ..<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
+</code></pre><p>Linux查看文件命令：</p>
+<pre><code>tail <span class="hljs-built_in">file_name</span>
+</code></pre><h2 id="-">参考链接：</h2>
+<p><a href="https://docs.mongodb.com/">docs.mongodb.org</a></p>
+<p><a href="https://www.mongodb.com/">www.mongodb.com</a></p>
+<p><a href="http://www.mongoing.com/">www.mongoing.com</a></p>
+<p>mongoHub - MAC mongo 客户端</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Header One</th>
+<th style="text-align:left">Header Two</th>
+<th style="text-align:left">Header Two</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Item One</td>
+<td style="text-align:left">Item Two</td>
+<td style="text-align:left">Item Two</td>
+</tr>
+<tr>
+<td style="text-align:left">Header One</td>
+<td style="text-align:left">Header Two</td>
+<td style="text-align:left">Header Two</td>
+</tr>
+</tbody>
+</table>
+<p>今天放学后回家发现钥匙忘到单位了。我们爷俩只好等妈妈下班回家。估计儿子妈妈要到小区门口了，我们爷俩准备去门口接她，顺便买些吃的。</p>
+<p>一路上，儿子跟我讲着学校足球课上的趣事。他说足球课上，我们这边的足球队员太厉害了，我们的守门员闲的没事可做了，坐着不知干啥好了，就和我聊天。足球一直在那边球门附近踢。那边的守门员被忙得手忙脚乱，一直闲不下来，有时一着急，还整乌龙球，用头顶到自己球门里了。乐死我了。</p>
+<p>我问他:你没有上场踢吗？</p>
+<p>他说:上场踢了。</p>
+<p>我接着跟儿子说:对于你们的守门员来讲，他一点儿也没受到锻炼，而对方的守门员才真正的受到了锻炼。你们的守门员在那闲着，而对于守门来说，他却没得到任何机会去锻炼，比如说球可能从各种方向来，他怎么去扑救，如果真的陷入险境，他可能一下子不知所措了，而对方的守门员却经验越来越丰富了。</p>
+<p>八九年 生于贵州安顺 现居四川成都 中国西南部活跃。</p>
+<p>一四年 进入前端开发 遵循极简主义 热爱新特性 喜欢有趣的项目。部分开源在<a href="">GitHub</a>。</p>
+<p>一九年 接触拍摄 追求氛围感 喜欢日系拍摄。偶尔分享在<a href="">微博</a>。</p>
+<p>代码、摄影、撸啊撸、NBA、参考消息 我的全部。</p>
+<p>留言给我 也可以通过<a href="">QQ</a>、<a href="mailto:zhangjh03@126.com">邮箱</a>联系我。也许？</p>
+<p>开始吧！</p>
+<p><img src="../img/5.jpg" alt="" title="简书"></p>
+<p><img src="../img/1.jpg" alt="" title="简书"></p>
+<p><img src="../img/2.jpg" alt="" title="简书"></p>
       </div>
 
       <!-- <div class="article-tags">
