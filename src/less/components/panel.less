@@ -16,16 +16,20 @@
     position: relative;
     padding: @spacing-sm;
     color: @white;
+    border-radius: 2px;
     background: @color-text;
+    // background: linear-gradient(to right, @color-primary, @white);
     &:after {
       content: '';
       position: absolute;
-      top: @spacing-sm;
-      left: @spacing-sm;
+      top: @spacing-xs;
+      left: @spacing-xs;
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: @color-divider;
+      border-radius: 2px;
+      // background: @color-divider;
+      background: linear-gradient(to left, @color-primary, @white);
     }
   }
   // &-more {

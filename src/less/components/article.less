@@ -108,8 +108,8 @@
 
 .article {
   padding: @spacing-md;
-  font-size: @font-size-sm;
-  line-height: 24px;
+  font-size: @font-size-xs;
+  line-height: 20px;
   text-align: justify;
   word-break: break-all;
   // letter-spacing: 1px;
@@ -186,7 +186,7 @@
     // font-size: 90%;
     font-family: @font-family-code;
     border-radius: 2px;
-    color: @color-code;
+    // color: @color-code;
     word-break: break-all;
     border: 1px solid @color-border;
     background-color: @color-background-code;
@@ -215,11 +215,12 @@
     max-width: 100%;
   }
   a {
-    color: @color-primary;
-    border-bottom: 1px solid @color-primary;
-    // &:hover {
-    //   border-bottom: 1px solid @color-primary;
-    // }
+    // color: @color-primary;
+    border-bottom: 1px solid @color-text;
+    &:hover {
+      color: @color-primary;
+      border-bottom: 1px solid @color-primary;
+    }
   }
   em {
     font-style: italic;
