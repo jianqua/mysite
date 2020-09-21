@@ -26,14 +26,16 @@
   }
   &-item {
     float: left;
-    margin-left: @spacing-md;
+    // margin-left: @spacing-md;
     a {
       display: inline-block;
-      padding: @spacing-sm*3 @spacing-md;
-      &.active,
+      padding: @spacing-sm*3;
+      &.active {
+        color: @color-primary;
+      }
       &:hover {
         color: @color-primary;
-        // background: @color-background-content;
+        background: @color-background-content;
       }
     }
   }
