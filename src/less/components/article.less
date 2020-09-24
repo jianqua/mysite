@@ -174,7 +174,7 @@
     // font-size: 90%;
     font-family: @font-family-code;
     border-radius: 2px;
-    // color: @color-code;
+    color: @color-code;
     word-break: break-all;
     border: 1px solid @color-border;
     background-color: @color-background-code;
@@ -186,6 +186,7 @@
     // font-size: @font-size-content;
     font-family: @font-family-code;
     border-radius: 2px;
+    // color: @color-pre;
     background: @color-background-code;
     overflow: auto;
   }
@@ -214,7 +215,7 @@
     font-style: italic;
   }
   strong {
-    padding: 0 4px;
+    // padding: 0 4px;
     font-weight: bold;
     font-family: @font-family-code;
     word-break: break-all;
@@ -241,6 +242,11 @@
   th {
     font-weight: bold;
     background: @color-background-content;
+  }
+  tbody tr {
+    &:hover {
+      background: @color-background-content;
+    }
   }
 }
 
