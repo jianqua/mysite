@@ -25,20 +25,92 @@
   <div class="container">
     <!-- 文章 -->
     <div class="article-wrap">
-      <h1 class="article-title">印度边境安全部队101人确诊新冠</h1>
+      <h1 class="article-title">Java 监听器Listener总结</h1>
       <div class="article-meta-wrap">
         <div class="article-meta">
-          <div class="article-tags">
-            <a class="btn btn-small" href="javascript:;">2020</a>
-            <a class="btn btn-small" href="javascript:;">开发手册</a>
-            <a class="btn btn-small" href="javascript:;">JavaScript</a>
-            <a class="btn btn-small" href="javascript:;">Python</a>
-          </div>
-          <div class="article-time">发布于 2020年07月19日 星期日</div>
+          <div class="article-tags"><a class="btn btn-small" href="javascript:;">2020</a><a class="btn btn-small" href="javascript:;">开发手册</a><a class="btn btn-small" href="javascript:;">Java</a></div>
+          <div class="article-time">发布于 2020年10月27日 星期二</div>
         </div>
       </div>
 
       <div class="article">
+<!-- <p>监听器是 J2EE Servlet 模块下的组件。监听器对 Web 应用对象的行为进行监控。通过监听器监听自动触发指定的功能代码</p> -->
+<h2 id="-listener">监听器 Listener</h2>
+<ul>
+<li>监听器是 J2EE Servlet 模块下的组件</li>
+<li>监听器对 Web 应用对象的行为进行监控</li>
+<li>通过监听器监听自动触发指定的功能代码</li>
+</ul>
+<h2 id="-">三种监听对象</h2>
+<ul>
+<li>ServletContext 对全局 ServletContext 及其属性进行监听</li>
+<li>HttpSeesion 对用户会话及其属性操作进行监听</li>
+<li>ServletRequest 对请求及其属性操作进行监听</li>
+</ul>
+<h2 id="-">过滤器与监听器的区别</h2>
+<ul>
+<li>过滤器 Filter 的职责是对 URL 进行过滤拦截 是主动执行</li>
+<li>监听器 Listener 的职责是对 Web 对象进行监听 是被动触发</li>
+</ul>
+<h2 id="-">开发监听器三要素</h2>
+<ul>
+<li>实现 XxxListener 接口 不同的接口对应不同监听对象</li>
+<li>实现每个接口中独有的方法 实现触发监听的后续操作</li>
+<li>在 web.xml 中配置 <listener> 使监听器生效</li>
+</ul>
+<h2 id="-">开发一个监听器</h2>
+<ol>
+<li>新建一个标准web工程</li>
+<li>创建包创建类 FirstListener.java 实现对应接口方法</li>
+<li>配置 web.xml 或使用注解形式 推荐配置形式(因为是对全局的监听)</li>
+</ol>
+<p>FirstListener.java:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ServletContextListener</span> </span>{
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextInitialized</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
+    System.out.println(<span class="hljs-string">"ServletContext 已初始化"</span>);
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextDestroyed</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
+    System.out.println(<span class="hljs-string">"ServletContext 已销毁"</span>);
+  }
+}
+</code></pre>
+<p>web.xml:</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>com.imooc.listener.FirstListener<span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span>
+</code></pre>
+<p>注解形式 FirstListener.java:</p>
+<pre><code class="lang-java"><span class="hljs-variable">@WebListener</span>
+public class FirstListener implements ServletContextListener {}</code></pre>
+<h2 id="-">六种常用监听接口</h2>
+<p>内置对象监听接口</p>
+<ul>
+<li><code>ServletContextListener</code> 监听 ServletContext 对象创建、销毁等操作</li>
+<li><code>HttpSeesionListener</code> 监听 HttpSession 对象创建、销毁等操作</li>
+<li><code>ServletRequestListener</code> 监听 HttpServletRequest 对象创建、销毁等操作</li>
+</ul>
+<p>属性监听接口</p>
+<ul>
+<li><code>ServletContextAttributeListener</code> 监听全局属性操作</li>
+<li><code>HttpSeesionAttributeListener</code> 监听用户会话属性操作</li>
+<li><code>ServletRequestAttributeListener</code> 监听请求属性操作</li>
+</ul>
+<p>监听器可通过实现多个接口及实现对应方法</p>
+<h2 id="-">监听器应用场景</h2>
+<p><strong>请求流量分析</strong></p>
+<ol>
+<li>数据存放在全局上下文中 ServletContext</li>
+<li>ServletRequestListener 监听请求</li>
+<li>判断更新 timeList valueList</li>
+<li>Servlet 利用 fastjson 返回数据 前端通过 ajax</li>
+<li>排除统计页面 统计请求的请求统计</li>
+</ol>
+<p><strong>静态数据预处理(数据相对稳定)</strong></p>
+<p>网站头部导航栏在应用启动时从数据库获取一次 存到 ServletContext中 不必每次请求从数据库获取</p>
+
 <h2 id="linux-">LINUX安装</h2>
 <p>下载 解压 .tar.tz 文件</p>
 <p>解压命令：</p>
@@ -63,20 +135,8 @@
 ├── MPL-<span class="hljs-number">2</span>
 ├── README
 └── THIRD-PARTY-NOTICES
-</code></pre><h2 id="mac-4-0-3">MAC安装 4.0.3</h2>
-<p>下载安装包 ..tgz</p>
-<p>解压</p>
-<p>重命名为mongodb，移动到 <code>/usr/local</code></p>
-<p><code>bin/</code>目录加入环境变量 编辑<code>~/.zhsrc</code> ? <code>~/.bash_profile</code></p>
-<pre><code>export PATH=<span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/mongodb/</span>bin:<span class="hljs-variable">${PATH}</span>
-</code></pre><p>使配置问价生效</p>
-<pre><code><span class="hljs-built_in">source</span> ~/.bash_profile
-</code></pre><p>根目录下创建数据目录 最高权限</p>
-<pre><code><span class="hljs-title">sudo</span> mkdir -p /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
-</code></pre><p>打开mongod提示/data/db只有可读权限 增加权限</p>
-<pre><code><span class="hljs-title">sudo</span> chown id -u /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
-</code></pre><p>填写用户名 给予权限</p>
-<pre><code><span class="hljs-title">sudo</span> chown <span class="hljs-type">ZHANGJIANHUA</span> /<span class="hljs-class"><span class="hljs-keyword">data</span>/db</span>
+</code></pre>
+
 </code></pre><h2 id="-">配置</h2>
 <p>无论WIN，MAC都要自己建立目录，和配置信息。</p>
 <p>新增目录结构：</p>
@@ -86,118 +146,7 @@
 ├── <span class="hljs-built_in">log</span>
 │   └── mongod.<span class="hljs-built_in">log</span>
 </code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">基本数据类型</th>
-<th style="text-align:left">对应包装类</th>
-<th style="text-align:left">默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">byte</td>
-<td style="text-align:left">Byte</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">short</td>
-<td style="text-align:left">Short</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">int</td>
-<td style="text-align:left">Integer</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">long</td>
-<td style="text-align:left">Long</td>
-<td style="text-align:left">0L</td>
-</tr>
-<tr>
-<td style="text-align:left">float</td>
-<td style="text-align:left">Float</td>
-<td style="text-align:left">0.0f</td>
-</tr>
-<tr>
-<td style="text-align:left">double</td>
-<td style="text-align:left">Double</td>
-<td style="text-align:left">0.0d</td>
-</tr>
-<tr>
-<td style="text-align:left">char</td>
-<td style="text-align:left">Charactor</td>
-<td style="text-align:left">&#39;\u0000&#39; (空格)</td>
-</tr>
-<tr>
-<td style="text-align:left">boolean</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">false</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> i</span>) </span>{
-Integer var1 = <span class="hljs-number">20</span> + i;
-<span class="hljs-keyword">if</span>(var1 % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>)
-  System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">'能被5整除'</span>);
-<span class="hljs-keyword">else</span>
-  System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">'不能被5整除'</span>);
-}
-</code></pre>
-<p>mongod.conf配置信息：</p>
-<pre><code><span class="hljs-attr">port</span> = <span class="hljs-number">12345</span>
-<span class="hljs-attr">dbpath</span> = data
-<span class="hljs-attr">logpath</span> = log/mongod.log
-<span class="hljs-attr">fork</span> = <span class="hljs-literal">true</span> // 以后台程序运行
-</code></pre><h2 id="-">启动</h2>
-<p>找到安装目录 bin的上一级</p>
-<p>MAC: <code>/usr/local/mongodb/</code></p>
-<pre><code class="lang-/bin/mongod```">
-```./bin/mongo`
-</code></pre>
-<p>以配置文件启动</p>
-<pre><code>./bin/mongod -f <span class="hljs-keyword">conf</span>/mongod.<span class="hljs-keyword">conf</span>
-</code></pre><h2 id="-mongodb-">连接mongodb服务器 / 数据库</h2>
-<p>查看连接具体参数</p>
-<pre><code>./bin/mongo <span class="hljs-comment">--help</span>
-</code></pre><p>链接数据库：</p>
-<pre><code>./bin/mongo <span class="hljs-number">127.0</span><span class="hljs-meta">.0</span><span class="hljs-meta">.1</span>:<span class="hljs-number">12345</span>/foo
-</code></pre><h2 id="-mongodb-">关闭mongodb服务器</h2>
-<p>在(<code>./mongo</code>)已经开启时，关闭：</p>
-<pre><code><span class="hljs-keyword">use</span> <span class="hljs-keyword">admin</span>
 
-db.shutdownServer()
-</code></pre><h2 id="-">基本操作</h2>
-<p>查看数据库列表</p>
-<pre><code><span class="hljs-attribute">show dbs</span>
-</code></pre><p>选择数据库 / 如果没有则创建此数据库并进入</p>
-<pre><code><span class="hljs-meta"><span class="hljs-meta-keyword">use</span> &lt;db_name&gt;</span>
-</code></pre><p>选择数据库后 删除数据库 删除后进行检查 <code>show dbs</code></p>
-<pre><code><span class="hljs-selector-tag">db</span><span class="hljs-selector-class">.dropDatabase</span>()
-</code></pre><p>集合(表)。 <strong>插入</strong> 文档(记录) / 若没有 默认创建此集合。检查 show dbs</p>
-<pre><code>db.&lt;table_name&gt;.insert(&lt;json&gt;)
-
-<span class="hljs-comment">// 用js语法批量插入多条数据</span>
-<span class="hljs-function"><span class="hljs-title">for</span><span class="hljs-params">(i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">100</span>; i++)</span><span class="hljs-title">db</span></span>.&lt;table_name&gt;.insert({x: i})
-</code></pre><p>查看集合(表)列表</p>
-<pre><code><span class="hljs-attribute">show collections</span>
-</code></pre><p><strong>查询</strong> 文档(记录)</p>
-<p>可以不带参数 默认显示所有 每条文档生成全局唯一_id 此_id也可以自定义 但不可以重复</p>
-<pre><code>db.<span class="hljs-symbol">&lt;table_name&gt;</span>.<span class="hljs-keyword">find</span>()
-</code></pre><p>带参</p>
-<pre><code>db.<span class="hljs-symbol">&lt;table_name&gt;</span>.<span class="hljs-keyword">find</span>(<span class="hljs-symbol">&lt;json&gt;</span>)
-</code></pre><p>文档多条时 计数(length)查询</p>
-<pre><code>db.&lt;table_name&gt;.<span class="hljs-keyword">find</span>().<span class="hljs-keyword">count</span>() <span class="hljs-comment">//99</span>
-</code></pre><p>查询[3 - 50]文档 查询第3条开始 返回2条文档 同时以x排序</p>
-<pre><code><span class="hljs-selector-tag">db</span>.&lt;<span class="hljs-selector-tag">table_name</span>&gt;<span class="hljs-selector-class">.find</span>()<span class="hljs-selector-class">.skip</span>(3)<span class="hljs-selector-class">.limit</span>(2)<span class="hljs-selector-class">.sort</span>({<span class="hljs-attribute">x</span>: <span class="hljs-number">1</span>})
-</code></pre><h2 id="-">关于</h2>
-<p>Linux卸载命令：</p>
-<pre><code>sudo apt-<span class="hljs-keyword">get</span> autoremove <span class="hljs-comment">--purge soft_wera_name</span>
-</code></pre><p>Linux解压命令：</p>
-<pre><code>tar zxvf ..<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>
-</code></pre><p>Linux查看文件命令：</p>
-<pre><code>tail <span class="hljs-built_in">file_name</span>
 </code></pre><h2 id="-">参考链接：</h2>
 <p><a href="https://docs.mongodb.com/">docs.mongodb.org</a></p>
 <p><a href="https://www.mongodb.com/">www.mongodb.com</a></p>
