@@ -1,17 +1,16 @@
 .article {
   &-wrap {
     margin-bottom: @spacing-md;
-    font-family: @font-family-article;
     // border: 1px solid @color-border;
     // border-radius: 2px;
     // background: @white;
   }
   &-meta-wrap {
-    margin-top: @spacing-md;
-    padding: @spacing-md;
-    border-radius: 2px;
-    border-top: 1px solid @color-divider;
-    background: @color-background-content;
+    margin: @spacing-md 0 @spacing-md*2;
+    // padding: @spacing-md;
+    // border-radius: 2px;
+    // border-top: 1px solid @color-divider;
+    // background: @color-background-content;
 
     // text-align: center;
   }
@@ -23,6 +22,7 @@
   &-time {
     // padding-bottom: @spacing-md;
     // padding: 0 @spacing-md @spacing-md;
+
     color: @color-text-secondary;
   }
   &-tags {
@@ -119,6 +119,7 @@
 .article {
   padding: @spacing-md 0;
   font-size: @font-size-xs;
+  color: @color-title;
   line-height: 20px;
   text-align: justify;
   word-break: break-all;
@@ -135,8 +136,9 @@
   h4,
   h5,
   h6 {
-    color: @color-title;
+    // color: @color-title;
     line-height: 1.5;
+    font-weight: bold;
   }
   h2 {
     // border-bottom: 4px solid @color-primary; // #00e600;
@@ -156,7 +158,7 @@
       // background: linear-gradient(to right, @color-primary, @white);
     // }
 
-    font-size: 24px;
+    font-size: 18px; // 24px;
   }
   h3 {
     // font-size: 16px;
@@ -174,7 +176,7 @@
       // background: linear-gradient(to right, @color-primary, @white);
     // }
 
-    font-size: 18px;
+    font-size: 16px;
   }
   :not(pre) code {
     // margin: 0 4px;
@@ -182,7 +184,7 @@
     // font-size: 90%;
     font-family: @font-family-code;
     border-radius: 2px;
-    color: @color-code;
+    // color: @color-code;
     word-break: break-all;
     border: 1px solid @color-border;
     background-color: @color-background-code;

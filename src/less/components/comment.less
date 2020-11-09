@@ -6,7 +6,7 @@ textarea {
 }
 input,
 textarea {
-  background: @color-background-content;
+  background: #f1f4f8; // @color-background-content;
   border: 1px solid @color-divider;
   border-radius: 2px;
   // &:hover {
@@ -21,7 +21,7 @@ textarea {
     // border-color: darken(@color-primary, 20%);
     // color: @color-primary;
     border-color: @color-primary;
-    box-shadow: 0 0 0 2px lighten(@color-link, 20%);
+    // box-shadow: 0 0 0 2px lighten(@color-link, 20%);
   }
 }
 input {
@@ -34,24 +34,20 @@ textarea {
 }
 
 ::-webkit-input-placeholder {
-  font-family: @font-family-article;
   letter-spacing: 1px;
-  color: @color-text-secondary;
+  color: @color-text;
 }
 :-moz-placeholder {
-  font-family: @font-family-article;
   letter-spacing: 1px;
-  color: @color-text-secondary;
+  color: @color-text;
 }
 ::-moz-placeholder {
-  font-family: @font-family-article;
   letter-spacing: 1px;
-  color: @color-text-secondary;
+  color: @color-text;
 }
 :-ms-input-placeholder {
-  font-family: @font-family-article;
   letter-spacing: 1px;
-  color: @color-text-secondary;
+  color: @color-text;
 }
 
 .comment-form {
@@ -64,8 +60,9 @@ textarea {
     // color: @color-title;
     // font-weight: bold;
     // border-bottom: 1px solid $color-border;
+    display: inline-block;
     padding-left: @spacing-sm;
-    border-left: 4px solid @color-primary;
+    border-left: 12px solid @color-primary;
     font-weight: bold;
     color: @color-title;
   }
@@ -105,8 +102,8 @@ textarea {
     text-align: center;
     letter-spacing: 1px;
     border-radius: 2px;
-    color: @color-text-secondary;
-    background: @color-background-content;
+    color: @color-text;
+    background: #f1f4f8; // @color-background-content;
     border: 1px solid @color-divider;
     -webkit-touch-callout:none;
     -webkit-user-select:none;
@@ -132,8 +129,8 @@ textarea {
     text-align: center;
     letter-spacing: 1px;
     border-radius: 2px;
-    color: @color-text-secondary;
-    background: @color-background-content;
+    color: @color-text;
+    background: #f1f4f8; // @color-background-content;
     border: 1px solid @color-divider;
     -webkit-touch-callout:none;
     -webkit-user-select:none;
@@ -169,7 +166,8 @@ textarea {
     margin-right: @spacing-md;
     font-weight: bold;
     a {
-      border-bottom: 1px solid @color-text;
+      color: @color-title;
+      border-bottom: 1px solid @color-title;
       &:hover {
         color: @color-primary;
         border-bottom: 1px solid @color-primary;
@@ -177,10 +175,10 @@ textarea {
     }
   }
   &-time {
-    color: @color-text-secondary;
+    color: @color-text;
   }
   &-content {
-    color: @color-text-secondary;
+    color: @color-text;
     line-height: 18px;
   }
 }

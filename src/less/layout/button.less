@@ -5,6 +5,7 @@
   touch-action: manipulation;
   cursor: pointer;
   border: 1px solid transparent;
+  border-color: @color-border;
   white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -15,18 +16,24 @@
   transition: color .1s linear,background-color .1s linear,border .1s linear,box-shadow .1s linear;
   color: @color-text;
   background-color: #fff;
-  border-color: @color-border;
-  &:hover,
-  &.active {
-    color: @color-primary;
-    border-color: @color-primary;
+  &:hover {
+    color: @color-title;
+    border-color: @color-title;
+    // background-color: #e1e6ed;
   }
   &:active {
-    color: darken(@color-primary, 20%);
+    color: @color-title;// darken(@color-primary, 20%);
     // border-color: darken(@color-primary, 20%);
     // color: @color-primary;
-    border-color: @color-primary;
-    box-shadow: 0 0 0 2px lighten(@color-link, 20%);
+    // border-color: @color-primary;
+    // box-shadow: 0 0 0 2px lighten(@color-link, 20%);
+    background-color: #e1e6ed;
+    border-color: @color-title;
+  }
+  &.active {
+    color: @color-title;
+    // background-color: #e1e6ed;
+    border-color: @color-title;
   }
   &-small {
     padding: @spacing-xs @spacing-sm;

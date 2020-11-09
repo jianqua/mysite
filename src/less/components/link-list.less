@@ -1,0 +1,28 @@
+.link {
+  &-list {
+    .clearfix;
+    margin-right: -@spacing-sm;
+    margin-left: -@spacing-sm;
+    padding-top: @spacing-md;
+  }
+  &-item {
+    float: left;
+    width: 50%;
+    padding-right: @spacing-sm;
+    padding-left: @spacing-sm;
+    margin-bottom: @spacing-md;
+    & > a {
+      display: inline-block;
+      padding: @spacing-md;
+      width: 100%;
+      border-radius: 2px;
+      background: #f1f4f8;
+      // border: 1px dashed @color-border;
+      &:hover {
+        color: @color-title;
+        background: #e1e6ed;
+        // border: 1px solid @color-border;
+      }
+    }
+  }
+}
