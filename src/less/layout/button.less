@@ -5,7 +5,7 @@
   touch-action: manipulation;
   cursor: pointer;
   border: 1px solid transparent;
-  border-color: @color-border;
+  border-color: rgba(0,0,0,0.05);
   white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -17,23 +17,23 @@
   color: @color-text;
   background-color: #fff;
   &:hover {
-    color: @color-title;
-    border-color: @color-title;
-    // background-color: #e1e6ed;
+    color: @color-text;
+    // border-color: rgba(0,0,0,0.05);
+    background-color: #f1f4f8;
   }
   &:active {
-    color: @color-title;// darken(@color-primary, 20%);
+    // color: @color-title;// darken(@color-primary, 20%);
     // border-color: darken(@color-primary, 20%);
     // color: @color-primary;
     // border-color: @color-primary;
-    // box-shadow: 0 0 0 2px lighten(@color-link, 20%);
-    background-color: #e1e6ed;
-    border-color: @color-title;
+    box-shadow: 0 0 0 2px lighten(@color-text, 20%);
+    // background-color: #e1e6ed;
+    // border-color: @color-title;
   }
   &.active {
-    color: @color-title;
-    // background-color: #e1e6ed;
-    border-color: @color-title;
+    color: @color-text;
+    // border-color: rgba(0,0,0,0.05);
+    background-color: #f1f4f8;
   }
   &-small {
     padding: @spacing-xs @spacing-sm;

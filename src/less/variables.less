@@ -1,44 +1,43 @@
-// Color
+// color
 @white: #fff;
 @black: #000;
-@color-primary: deeppink;// deeppink; // royalblue;
+@color-primary: deeppink;
+@color-primary-hover: lighten(@color-primary, 20%);
+@color-primary-active: darken(@color-primary, 20%);
 @color-info: #2db7f5;
 @color-success: #19be6b;
 @color-warning: #ff9900;
 @color-error: #ed4014;
 
-@color-title: #000; // #17233d;
-@color-text: #515a6e; // #515a6e;
-@color-text-secondary: lighten(@black, 45%);
-@color-code: @color-error;// #ff1493;
-@color-pre: #71e78d;
-@color-link: @color-primary;
-@color-link-hover: lighten(@color-link, 20%);
-@color-link-active: darken(@color-link, 20%);
+// color - font
+@color-title: #17233d;
+@color-text: #515a6e;
+@color-text-secondary: #858b93;
+@color-code: @color-title;
 
-@color-background-body: #DCE2F1; //#dee1e6;//#fff;//#515a6e;//#ececec;
-@color-background-component: #fff;
-@color-background-content: #fafafa;//#f5f7f9;
-@color-background-code: #f8f9fb;//#f5f7f9;
-@color-background-pre: #1e242c;
+// color background
+@color-background-light: #f1f4f8;
+@color-background-dark: #e1e6ed;
 
-@color-border: #dcdee2;
+// color line
+@color-border: #e4e7eb;
 @color-divider: #e8eaec;
 
-// Font
+// font family
 @font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 @font-family-code: Consolas,Menlo,Courier,monospace;
 
+// font size
 @font-size-xs: 12px;
 @font-size-sm: 14px;
 @font-size-md: 16px;
 @font-size-lg: 18px;
 
-// Spacing
-@spacing-xs: 4px; // small items
-@spacing-sm: 8px; // Form controls and items
-@spacing-md: 16px; // small containers and buttons
-@spacing-lg: 24px; // containers
+// spacing
+@spacing-xs: 4px;
+@spacing-sm: 8px;
+@spacing-md: 16px;
+@spacing-lg: 24px;
 
 @line-height: 1.5;
 @border-radius: 2px;
