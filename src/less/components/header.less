@@ -9,14 +9,19 @@
   //         box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
 .logo {
-  height: 32px;
+  height: 28px;
   &-wrap {
     // padding: 0 @spacing-md;
     float: left;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    width: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     &:hover {
       background: @color-background-light;
+      .logo {
+        -webkit-animation: move 1000ms linear 1 normal;
+        // animation-direction: alternate;
+      }
     }
   }
 }
@@ -41,4 +46,9 @@
       }
     }
   }
+}
+
+@keyframes move {
+  from {transform: rotate(0deg);margin-left: 0;}
+  to {transform: rotate(360deg);margin-left: 14px;}
 }
