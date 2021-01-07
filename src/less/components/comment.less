@@ -6,8 +6,8 @@ textarea {
 }
 input,
 textarea {
-  background: #f1f4f8; // @color-background-light;
-  border: 1px solid #e4e7eb;
+  background: @color-background-light;
+  border: 1px solid @color-border;
   border-radius: 2px;
   // &:hover {
   //   border-color: @color-primary;
@@ -103,7 +103,7 @@ textarea {
     letter-spacing: 1px;
     border-radius: 2px;
     color: @color-text;
-    background: #f1f4f8; // @color-background-light;
+    background: @color-background-light;
     border: 1px solid #e4e7eb;
     -webkit-touch-callout:none;
     -webkit-user-select:none;
@@ -115,7 +115,7 @@ textarea {
   &-reset {
     &:hover {
       color: @color-primary;
-      background: @white;
+      // background: @color-background-light;
       border-color: @color-primary;
     }
     &:active {
@@ -123,30 +123,30 @@ textarea {
     }
   }
   &-submit {
-    display: block;
-    height: 34px;
-    line-height: 32px;
-    text-align: center;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    color: @color-text;
-    background: #f1f4f8; // @color-background-light;
-    border: 1px solid #e4e7eb;
-    -webkit-touch-callout:none;
-    -webkit-user-select:none;
-     -khtml-user-select:none;
-       -moz-user-select:none;
-        -ms-user-select:none;
-            user-select:none;
+    // display: block;
+    // height: 34px;
+    // line-height: 32px;
+    // text-align: center;
+    // letter-spacing: 1px;
+    // border-radius: 2px;
+    // color: @color-text;
+    // // background: #f1f4f8; // @color-background-light;
+    // border: 1px solid #e4e7eb;
+    // -webkit-touch-callout:none;
+    // -webkit-user-select:none;
+    //  -khtml-user-select:none;
+    //    -moz-user-select:none;
+    //     -ms-user-select:none;
+    //         user-select:none;
     &:hover {
-      color: @white;
-      background: @color-primary;
+      color: @color-primary;
+      // background: @color-background-light;
       border-color: @color-primary;
     }
     &:active {
-      color: @white;
-      background: @color-primary;
-      border-color: @color-primary;
+      // color: @white;
+      // background: @color-primary;
+      // border-color: @color-primary;
       box-shadow: 0 0 0 2px lighten(@color-primary, 20%);
     }
   }

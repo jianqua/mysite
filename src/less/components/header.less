@@ -9,19 +9,15 @@
   //         box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
 .logo {
-  height: 28px;
+  height: 60px;
   &-wrap {
     // padding: 0 @spacing-md;
     float: left;
-    width: 60px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    // width: 60px;
+    // padding-top: 16px;
+    // padding-bottom: 16px;
     &:hover {
-      background: @color-background-light;
-      .logo {
-        -webkit-animation: move 1000ms linear 1 normal;
-        // animation-direction: alternate;
-      }
+      // background: @color-background-light;
     }
   }
 }
@@ -46,9 +42,4 @@
       }
     }
   }
-}
-
-@keyframes move {
-  from {transform: rotate(0deg);margin-left: 0;}
-  to {transform: rotate(360deg);margin-left: 14px;}
 }
