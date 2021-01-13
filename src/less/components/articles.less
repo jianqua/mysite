@@ -4,15 +4,24 @@
     padding: 13px 0;
     line-height: 18px;
     // border: 1px solid @color-border;
-    & + & {
-      border-top: 1px solid @color-primary;
-    }
+    // & + & {
+    //   margin-top: @spacing-md;
+    //   // border-top: 1px solid @color-primary;
+    // }
   }
   &-item {
     // .clearfix;
     & + & {
       margin-top: @spacing-md;
     }
+  }
+  &-dozen {
+    padding-top: @spacing-md - 2;
+    border-top: 2px solid #f1f4f8;
+  }
+  &-index {
+    display: inline-block;
+    width: 26px;
   }
   &-time,
   &-title{
@@ -21,6 +30,15 @@
   &-time,
   &-hits {
     // color: @color-text-secondary;
+  }
+  &-index,
+  &-time {
+    font-family: @font-family-code;
+    color: @color-text-secondary;
+  }
+  &-time {
+    display: inline-block;
+    margin-right: @spacing-md;
   }
   &-title {
     margin-right: @spacing-md;

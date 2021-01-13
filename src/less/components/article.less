@@ -31,7 +31,7 @@
     // padding-bottom: @spacing-md;
     // padding: 0 @spacing-md @spacing-md;
 
-    color: @color-text-secondary;
+    // color: @color-text-secondary;
   }
   &-tags {
     .clearfix;
@@ -144,9 +144,9 @@
   h4,
   h5,
   h6 {
-    // color: @color-title;
+    color: @color-title;
     line-height: 1.5;
-    font-weight: bold;
+    // font-weight: bold;
   }
   h2 {
     // border-bottom: 4px solid @color-primary; // #00e600;
@@ -166,7 +166,7 @@
       // background: linear-gradient(to right, @color-primary, @white);
     // }
 
-    font-size: 18px; // 24px;
+    font-size: 24px; // 24px;
   }
   h3 {
     // font-size: 16px;
@@ -184,7 +184,7 @@
       // background: linear-gradient(to right, @color-primary, @white);
     // }
 
-    font-size: 16px;
+    font-size: 18px;
   }
   :not(pre) code {
     // margin: 0 4px;
@@ -265,6 +265,11 @@
     &:hover {
       background: @color-background-light;
     }
+  }
+  .file-name {
+    margin-bottom: 0;
+    font-family: Consolas, Menlo, Courier, monospace;
+    font-size: @font-size-xs;
   }
 }
 

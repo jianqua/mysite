@@ -29,7 +29,7 @@
       <div class="article-meta-wrap">
         <img class="article-author" src="../img/logo-graph.png" alt="作者">
         <div class="article-meta">
-          <div class="article-tags"><a class="btn btn-small active" href="javascript:;">2020</a><a class="btn btn-small active" href="javascript:;">开发手册</a><a class="btn btn-small active" href="javascript:;">Java</a><a class="btn btn-small active" href="javascript:;">Java Listener</a></div>
+          <div class="article-tags"><a class="btn btn-small" href="javascript:;">2020</a><a class="btn btn-small" href="javascript:;">开发手册</a><a class="btn btn-small" href="javascript:;">Java</a><a class="btn btn-small" href="javascript:;">Java Listener</a></div>
           <div class="article-time">2020年10月27日 星期二</div>
         </div>
       </div>
@@ -71,7 +71,7 @@
 <li>创建包创建类 FirstListener.java 实现对应接口方法</li>
 <li>配置 web.xml 或使用注解形式 推荐配置形式(因为是对全局的监听)</li>
 </ol>
-<p>FirstListener.java:</p>
+<p class="file-name">FirstListener.java</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ServletContextListener</span> </span>{
   <span class="hljs-meta">@Override</span>
   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextInitialized</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
@@ -84,12 +84,12 @@
   }
 }
 </code></pre>
-<p>web.xml:</p>
+<p class="file-name">web.xml</p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>com.imooc.listener.FirstListener<span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span>
 </code></pre>
-<p>注解形式 FirstListener.java:</p>
+<p class="file-name">FirstListener.java</p>
 <pre><code class="lang-java"><span class="hljs-variable">@WebListener</span>
 public class FirstListener implements ServletContextListener {}</code></pre>
 <h2 id="-">六种常用监听接口</h2>
