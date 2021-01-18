@@ -5,7 +5,7 @@
   touch-action: manipulation;
   cursor: pointer;
   border: 1px solid transparent;
-  border-color: @color-text-secondary; // rgba(0,0,0,0.05);
+  border-color: @color-border; // @color-text-secondary; // rgba(0,0,0,0.05);
   white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -14,7 +14,7 @@
   padding: @spacing-sm;
   border-radius: 2px;
   transition: color .1s linear,background-color .1s linear,border .1s linear,box-shadow .1s linear;
-  color: @color-text;
+  color: @color-text-secondary;
   background-color: #fff;
   &:hover {
     color: @color-text;
@@ -32,7 +32,7 @@
   }
   &.active {
     color: @color-text;
-    // border-color: rgba(0,0,0,0.05);
+    // border-color: @color-divider;
     background-color: #f1f4f8;
   }
   &-small {
