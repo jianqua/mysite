@@ -1,5 +1,7 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -14,11 +16,22 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'less-loader'],
-          publicPath: '../',
-          fallback: 'style-loader'
-        })
+        // use: ExtractTextPlugin.extract({
+        //   use: [
+        //     {
+        //       loader: 'css-loader',
+        //       options: {
+        //         minimize: true
+        //       }
+        //     },
+        //     {
+        //       loader: 'less-loader'
+        //     }
+        //   ],
+        //   publicPath: '../',
+        //   fallback: 'style-loader'
+        // })
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
       },
       {
         test: /\.html/,
@@ -46,8 +59,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new ExtractTextPlugin({
-      filename: 'css/[name].[hash].css'
+    // new ExtractTextPlugin({
+    //   // filename: 'css/[name].[hash].css'
+    //   filename: '[hash:14].css',
+    // }),
+    new MiniCssExtractPlugin({
+      filename: '[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       title: '首页',
@@ -74,5 +91,11 @@ module.exports = {
       filename: 'about.html',
       template: 'src/template/about.html'
     })
-  ]
+  ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ],
+  },
 }

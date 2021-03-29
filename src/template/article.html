@@ -27,21 +27,143 @@
     <div class="article-wrap">
       <h1 class="article-title">Java 监听器 Listener 总结</h1>
       <div class="article-meta-wrap">
-        <img class="article-author" src="../img/logo-graph.png" alt="作者">
+        <!-- <img class="article-author" src="../img/logo-graph.png" alt="作者"> -->
         <div class="article-meta">
-          <div class="article-tags"><a class="btn btn-small" href="javascript:;">2020</a><a class="btn btn-small" href="javascript:;">开发手册</a><a class="btn btn-small" href="javascript:;">Java</a><a class="btn btn-small" href="javascript:;">Java Listener</a></div>
+          <div class="article-tags"><a class="btn" href="javascript:;">2020</a><a class="btn" href="javascript:;">开发手册</a><a class="btn" href="javascript:;">Java</a><a class="btn" href="javascript:;">Java Listener</a></div>
           <div class="article-time">2020年10月27日 星期二</div>
         </div>
       </div>
 
       <div class="article">
+<h2 id="-">特点</h2>
+<ul>
+<li>一种类与类之间的关系</li>
+<li>使用已经存在的类的定义(父类、基类)作为基础建立新类(子类、派生类)</li>
+<li>新类的定义可以增加新的数据或新的功能 也可以用父类的功能(this调用) 但不能选择性地继承父类</li>
+</ul>
+<p>继承的关系</p>
+<ul>
+<li>满足 <strong>A is a B</strong> 的关系就可以形成继承关系</li>
+</ul>
+<h2 id="-">实现</h2>
+<ul>
+<li><code>extends</code></li>
+<li>只能单继承 唯一的父类</li>
+<li>子类可以访问父类非私有成员</li>
+<li><p>父类不可以访问子类特有成员</p>
+</li>
+<li><p>Eclipse中 创建新文件类时 快速创建其子类</p>
+</li>
+<li>实例化相关类时 可以<code>command + shift + o</code> 快速导入相关类</li>
+</ul>
+<h2 id="-">方法重写</h2>
+<p>语法规则：</p>
+<ul>
+<li>有继承关系的子类中 都要与父类继承的方法相同</li>
+<li>方法名相同 参数列表相同(顺序、个数、类型)</li>
+<li>访问修饰符 访问范围需要大于等于父类的访问范围</li>
+<li>与方法的参数名无关</li>
+<li><p>当方法返回值是viod或基本数据类型时 必须相同；当返回值类型时引用类型时 可以是父类或其子类</p>
+</li>
+<li><p>当子类重写父类方法后 子类对象调用的是重写后的方法</p>
+</li>
+<li>子类默认继承父类方法 子类可以重载(默认、不显示的)父类中的方法</li>
+<li>在子类中可以定义与父类重名的属性的(调用子类的属性)</li>
+</ul>
+<h2 id="-">访问修饰符</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">访问修饰符与作用范围</th>
+<th style="text-align:left">本类</th>
+<th style="text-align:left">同包</th>
+<th style="text-align:left">子类</th>
+<th style="text-align:left">其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>public</code></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>protected</code></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">默认</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>private</code></td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>private</code> 私有的 只允许在本类中进行访问(权限最小)</li>
+<li>默认 允许在当前类、同包子类/非子类调用；夸包子类/非子类不允许调用</li>
+<li><code>protected</code> 受保护的 允许在当前类、同包子类/非子类、夸包子类调用；夸包非子类不允许</li>
+<li><code>public</code> 共有的 允许在任意位置访问(权限最大)</li>
+</ul>
+<h2 id="super-"><code>super</code> 关键字</h2>
+<ul>
+<li><code>super</code>：父类对象的引用<ul>
+<li>访问父类成员方法</li>
+<li>访问父类属性</li>
+<li>访问父类构造方法</li>
+</ul>
+</li>
+<li>父类的构造不允许被继承 不允许被重写</li>
+<li>子类的构造的过程中必须调用其父类的构造方法</li>
+<li>如果子类的构造方法中没有显示标注(使用<code>super</code>) 则系统默认调用父类无参的构造方法</li>
+<li>如果子类构造方法中既没有显示标注 且父类中没有无参的构造方法 则编译出错</li>
+<li>使用<code>suoer</code>调用父类指定构造方法 必须在子类的构造方法的第一行</li>
+<li>不可以在<code>main</code>方法中使用</li>
+</ul>
+<h2 id="-">继承后的初始化顺序</h2>
+<p>父类静态成员
+子类静态成员
+父类对象构造(构造代码块 &gt; 无参构造方法)
+子类对象构造</p>
+<p>访问修饰符不影响成员加载顺序 跟书写位置位置有关(静态成员 静态代码块 位置在先先执行)</p>
+<ul>
+<li>子类构造默认调用父类无参构造方法(无参构造很重要 建议写上 特别是父类 否则父类无无参构造时 子类有参构造将报错) 可以通过super()调用父类允许被访问的其他构造方法</li>
+<li>所以 -&gt; <code>super(name, age)</code> 子类构造中调用父类有参构造</li>
+<li><code>super()</code>必须放在子类构造方法有效代码第一行</li>
+</ul>
+<h2 id="this-super">this 与 super</h2>
+<p><code>this</code>: 当前类对象的引用</p>
+<ul>
+<li>访问当前类的成员方法</li>
+<li>访问当前类的成员属性</li>
+<li>访问当前类的构造方法</li>
+<li>不能在静态方法中使用</li>
+</ul>
+<p><code>super</code>: 父类对象的引用</p>
+<ul>
+<li>访问父类的成员方法</li>
+<li>访问父类的成员属性</li>
+<li>访问父类的构造方法</li>
+<li><p>不能在静态方法中使用</p>
+</li>
+<li><p>在子类构造中调用时 <code>this</code> <code>super</code> 不能同时出现</p>
+</li>
+<li>如果子类构造调用了<code>this</code> 还会默认调用父类的<code>super()</code>(父类无参构造)</li>
+</ul>
 <!-- <p>监听器是 J2EE Servlet 模块下的组件。监听器对 Web 应用对象的行为进行监控。通过监听器监听自动触发指定的功能代码</p> -->
-<p><strong>zhangtengxue.com</strong> WEB开发者张腾学的个人博客网站。</p>
-<p>记录与分享个人视角对学习或见闻的理解与思路。网站主要内容为WEB开发相关技术的踩坑记录与经验总结 和前端效果演示用例展示。内容均为原创 个人观点 仅供参考 版权所有。</p>
-<p>追求最简主义 极致用户体验。</p>
-<p>保持网站没有广告 会员 打赏链接 等垃圾内容。最纯粹的内容展示 最直接的用户交互 最低的网络开销 确保最短时间内能检索到目标内容。</p>
-<p>网站的全部均由个人实现。</p>
-<p>张腾学 八九年生 现居贵州贵阳 相信真善美 不装 不作。友情链接 技术交流等.. 联系我 如果。联系邮箱 <a href="zhangjh03@126.com">zhangjh03@126.com</a></p>
 <h2 id="-listener">监听器 Listener</h2>
 <ul>
 <li>监听器是 J2EE Servlet 模块下的组件</li>
@@ -73,20 +195,20 @@
 </ol>
 <p class="file-name">FirstListener.java</p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ServletContextListener</span> </span>{
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextInitialized</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
-    System.out.println(<span class="hljs-string">"ServletContext 已初始化"</span>);
-  }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextInitialized</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
+        System.out.println(<span class="hljs-string">"ServletContext 已初始化"</span>);
+    }
 
-  <span class="hljs-meta">@Override</span>
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextDestroyed</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
-    System.out.println(<span class="hljs-string">"ServletContext 已销毁"</span>);
-  }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">contextDestroyed</span><span class="hljs-params">(ServletContextEvent sce)</span> </span>{
+        System.out.println(<span class="hljs-string">"ServletContext 已销毁"</span>);
+    }
 }
 </code></pre>
 <p class="file-name">web.xml</p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>com.imooc.listener.FirstListener<span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>com.imooc.listener.FirstListener<span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span>
 </code></pre>
 <p class="file-name">FirstListener.java</p>
@@ -107,7 +229,8 @@ public class FirstListener implements ServletContextListener {}</code></pre>
 </ul>
 <p>监听器可通过实现多个接口及实现对应方法</p>
 <h2 id="-">监听器应用场景</h2>
-<p><strong>请求流量分析</strong></p>
+<!-- <p><strong>请求流量分析</strong></p> -->
+<h4>请求流量分析</h4>
 <ol>
 <li>数据存放在全局上下文中 ServletContext</li>
 <li>ServletRequestListener 监听请求</li>
@@ -115,7 +238,8 @@ public class FirstListener implements ServletContextListener {}</code></pre>
 <li>Servlet 利用 fastjson 返回数据 前端通过 ajax</li>
 <li>排除统计页面 统计请求的请求统计</li>
 </ol>
-<p><strong>静态数据预处理(数据相对稳定)</strong></p>
+<!-- <p><strong>静态数据预处理(数据相对稳定)</strong></p> -->
+<h4>静态数据预处理(数据相对稳定)</h4>
 <p>网站头部导航栏在应用启动时从数据库获取一次 存到 ServletContext中 不必每次请求从数据库获取</p>
 
 <h2 id="linux-">LINUX安装</h2>
