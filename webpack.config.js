@@ -73,24 +73,24 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: '日志',
-      filename: 'articles.html',
-      template: 'src/template/articles.html'
+      filename: 'articleList.html',
+      template: 'src/template/articleList.html'
     }),
     new HtmlWebpackPlugin({
       title: '日志详情',
-      filename: 'article.html',
-      template: 'src/template/article.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: '演示',
-      filename: 'demos.html',
-      template: 'src/template/demos.html'
+      filename: 'articleInfo.html',
+      template: 'src/template/articleInfo.html'
     }),
     new HtmlWebpackPlugin({
       title: '关于',
       filename: 'about.html',
       template: 'src/template/about.html'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      title: '404',
+      filename: '404.html',
+      template: 'src/template/404.html'
+    }),
   ],
   optimization: {
     minimize: true,
