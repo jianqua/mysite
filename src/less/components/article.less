@@ -121,7 +121,7 @@
 .article {
   padding-top: 13px;
   font-size: @font-size-xs;
-  // color: @color-title;
+  color: @color-title;
   line-height: 20px;
   text-align: justify;
   word-break: break-all;
@@ -138,7 +138,7 @@
   h4,
   h5,
   h6 {
-    color: @color-title;
+    // color: @color-title;
     line-height: 1.5;
     font-weight: bold;
   }
@@ -225,11 +225,11 @@
     }
   }
   em {
-    color: @color-title;
+    // color: @color-title;
   }
   strong {
     // padding: 0 4px;
-    color: @color-title;
+    // color: @color-title;
     font-weight: bold;
     // font-family: @font-family-code;
     word-break: break-all;
@@ -237,13 +237,16 @@
   }
   ul,
   ol {
-    padding-left: 1.4em;
+    padding-left: 1.2em;
   }
   ul {
     list-style: disc;
   }
   ol {
     list-style: decimal;
+  }
+  li + li {
+    margin-top: @spacing-sm;
   }
   table {
     width: 100%;
