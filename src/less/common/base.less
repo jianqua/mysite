@@ -13,9 +13,8 @@
 body {
   font-family: @font-family;
   font-size: @font-size-xs;
-  line-height: 1;//@line-height;
+  line-height: 1;
   color: @color-text;
-  // background-color: @color-background-body;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,8 +22,8 @@ body {
 .container {
   .clearfix;
   margin: 0 auto;
-  padding: 0 @spacing-md;
-  width: 792px;
+  padding: 0 @spacing-lg;
+  max-width: 792px;
 }
 
 button, input, select, textarea {
@@ -39,32 +38,16 @@ input::-ms-clear, input::-ms-reveal {
 
 a {
   color: inherit;
-  // color: @color-primary;
   background: transparent;
   text-decoration: none;
   outline: none;
   cursor: pointer;
-  // transition: color @transition-time ease;
-
-  &:hover {
-    color: @color-primary;
-  }
-
+  &:hover,
   &:active {
     color: @color-primary;
-  }
-
-  &:active,
-  &:hover {
     outline: 0;
     text-decoration: none;
   }
-
-  // &[disabled] {
-  //   color: #ccc;
-  //   cursor: @cursor-disabled;
-  //   pointer-events: none;
-  // }
 }
 
 img {

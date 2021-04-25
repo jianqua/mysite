@@ -3,6 +3,9 @@
   border-bottom: 1px solid #d1d1d1;
   -webkit-box-shadow: 0 1px 3px #d1d1d1;
   box-shadow: 0 1px 3px #d1d1d1;
+  &-container {
+    padding-right: 0;
+  }
 }
 .logo {
   padding: @spacing-lg 0;
@@ -16,7 +19,6 @@
   &-list {
     .clearfix;
     float: right;
-    margin-right: -@spacing-lg;
   }
   &-item {
     float: left;
@@ -24,6 +26,12 @@
     &.active {
       color: @color-primary;
     }
+    // &.active {
+    //   a {
+    //     -webkit-box-shadow: 0 20px 14px -20px @color-primary;
+    //     box-shadow: 0 20px 14px -20px @color-primary;
+    //   }
+    // }
     a {
       display: inline-block;
       padding: @spacing-lg;
